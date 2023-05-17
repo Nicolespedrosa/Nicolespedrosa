@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hello World! Me chamo Nicole e vou falar um pouquinho sobre mim: 👋
 
 <!--
 **Nicolespedrosa/Nicolespedrosa** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
