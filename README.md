@@ -31,4 +31,3 @@ Mais dashboards e análises serão adicionados em breve!
 
 ---
 
-*💡 Dica:* quando adicionar novos dashboards, siga o mesmo modelo de “cartão” com título, imagem, descrição e link de download.
