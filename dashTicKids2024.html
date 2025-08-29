@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard TIC Kids Online - Nicole Pedrosa</title>
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #2a3f54;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 10px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 10px;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .thumbnails img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border 0.2s;
+    }
+    .thumbnails img:hover, .thumbnails img.active-thumb {
+      border: 2px solid #2a3f54;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #2a3f54;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .download:hover { background: #1d2c3a; }
+
+    footer {
+      background: #2a3f54;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfólio Power BI</h1>
+    <p>Desenvolvido por Nicole Pedrosa</p>
+  </header>
+
+  <section>
+    <h2>Dashboard TIC Kids Online - 2024</h2>
+    <p>Este relatório analisa o uso da internet por crianças e adolescentes de 09 a 17 anos.</p>
+    <p>Fonte: <a href="https://cetic.br/pt/arquivos/kidsonline/2024/criancas/#tabelas">TIC Kids Online Brasil - 2024 Crianças e adolescentes</a></p>
+
+    <div class="carousel">
+      <img src="1.png" alt="Dashboard Print 1" class="active">
+      <img src="1b.png" alt="Dashboard Print 2">
+      <img src="2.png" alt="Dashboard Print 3">
+      <img src="2b.png" alt="Dashboard Print 4">
+      <img src="3.png" alt="Dashboard Print 5">
+      <img src="3b.png" alt="Dashboard Print 6">
+      <img src="4.png" alt="Dashboard Print 7">
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="thumbnails">
+      <img src="1.png" onclick="goToSlide(0)" class="active-thumb">
+      <img src="1b.png" onclick="goToSlide(1)">
+      <img src="2.png" onclick="goToSlide(2)">
+      <img src="2b.png" onclick="goToSlide(3)">
+      <img src="3.png" onclick="goToSlide(4)">
+      <img src="3b.png" onclick="goToSlide(5)">
+      <img src="4.png" onclick="goToSlide(6)">
+    </div>
+
+    <a href="TIC Kids Online 2024.pbix" class="download" download>Baixar Arquivo .PBIX</a>
+  </section>
+
+  <footer>
+    <p>📧 Contato: <a href="mailto:nipedrosa01@gmail.com" style="color: #ffd700;">nipedrosa01@gmail.com</a></p>
+    <p>🌐 LinkedIn: <a href="https://linkedin.com/in/nicole-pedrosa-nsp" style="color: #ffd700;">linkedin.com/in/nicole-pedrosa-nsp</a></p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    const thumbs = document.querySelectorAll('.thumbnails img');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+
+      thumbs.forEach((thumb, i) => thumb.classList.remove('active-thumb'));
+      thumbs[index].classList.add('active-thumb');
+
+      currentSlide = index;
+    }
+
+    function changeSlide(direction) {
+      let newIndex = currentSlide + direction;
+      if (newIndex < 0) newIndex = slides.length - 1;
+      if (newIndex >= slides.length) newIndex = 0;
+      showSlide(newIndex);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+  </script>
+</body>
+</html>
