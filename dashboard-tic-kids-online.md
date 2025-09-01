@@ -1,6 +1,7 @@
 # Dashboard TIC Kids Online - 2024
 
-## Galeria de Imagens
+![Document Print 1](1doc.png)
+![Document Print 2](2doc.png)
 ![Dashboard Print 1](1.png)
 ![Dashboard Print 2](1b.png)
 ![Dashboard Print 3](2.png)
